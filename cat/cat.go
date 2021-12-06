@@ -14,18 +14,16 @@ type Cat struct {
 	Height int    `json:"height"`
 }
 
-func GetCat() string {
+func GetCats() []Cat {
 	body, err := httpGetStr("https://api.thecatapi.com/v1/images/search?api_key=3e315e96-8143-4a6c-b32a-47252e6cc242")
 	if err != nil {
-		return ""
+		return nil
 	}
 	cats, err := formatCat(body)
 	if err != nil {
-		return ""
+		return nil
 	}
-	result := cats[0].ToS()
-
-	return result
+	return cats
 }
 
 func httpGetStr(url string) ([]byte, error) {

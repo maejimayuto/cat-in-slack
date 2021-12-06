@@ -15,10 +15,10 @@ func main() {
 	if err != nil {
 		return
 	}
-	result := cat.GetCat()
-	fmt.Printf("%s", result)
+	cats := cat.GetCats()
+	fmt.Printf("%s", cats[0].ToString())
 	api := slack.New(os.Getenv("SLACK_BOT_TOKEN"))
-	if _, _, err := api.PostMessage("04-cat", slack.MsgOptionText("test", false)); err != nil {
+	if _, _, err := api.PostMessage("04-cat", slack.MsgOptionText(cats[0].Url, false)); err != nil {
 		log.Println(err)
 		return
 	}
