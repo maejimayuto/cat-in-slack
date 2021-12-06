@@ -55,10 +55,10 @@ func formatCat(body []byte) ([]Cat, error) {
 	return cats, nil
 }
 
-func (w *Cat) ToS() string {
-	url := fmt.Sprintf("url: %s\n", w.Url)
-	width := fmt.Sprintf("width: %d\n", w.Width)
-	height := fmt.Sprintf("height: %d\n", w.Height)
+func (c *Cat) ToString() string {
+	url := fmt.Sprintf("url: %s\n", c.Url)
+	width := fmt.Sprintf("width: %d\n", c.Width)
+	height := fmt.Sprintf("height: %d\n", c.Height)
 	result := url + width + height
 
 	return result
