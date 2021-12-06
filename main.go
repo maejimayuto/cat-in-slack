@@ -1,11 +1,11 @@
 package main
 
 import (
-	"cat-in-slack/weather"
+	"cat-in-slack/cat"
 	"fmt"
 )
 
 func main() {
-	result := weather.GetWeather()
+	result := cat.GetCat()
 	fmt.Printf("%s\n", result)
 }
