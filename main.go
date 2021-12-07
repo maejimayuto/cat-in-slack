@@ -6,14 +6,17 @@ import (
 	"log"
 	"os"
 
+	"github.com/joho/godotenv"
 	"github.com/slack-go/slack"
 )
 
 func main() {
-	// err := godotenv.Load(fmt.Sprintf("%s.env", os.Getenv("GO_ENV")))
-	// if err != nil {
-	// 	log.Fatal(err)
-	// }
+	if os.Getenv("ON_HEROKU") != "true" {
+		err := godotenv.Load(fmt.Sprintf("%s.env", os.Getenv("GO_ENV")))
+		if err != nil {
+			log.Fatal(err)
+		}
+	}
 	cats := cat.GetCats()
 	fmt.Printf("%s", cats[0].ToString())
 	log.Printf("%s", cats[0].ToString())
