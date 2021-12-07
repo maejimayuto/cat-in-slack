@@ -1,6 +1,6 @@
 module cat-in-slack
 
-// +heroku goVersion go1.14
+// +heroku goVersion go1.17
 go 1.17
 
 require (
