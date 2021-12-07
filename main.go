@@ -17,6 +17,7 @@ func main() {
 	}
 	cats := cat.GetCats()
 	fmt.Printf("%s", cats[0].ToString())
+	log.Printf("%s", cats[0].ToString())
 	// TODO: 2MB 以上だと画像が展開されないので、別の画像に変更する #1
 	api := slack.New(os.Getenv("SLACK_BOT_TOKEN"))
 	// TODO: 画像の block だけをいい感じに表示したい #2
