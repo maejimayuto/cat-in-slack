@@ -11,6 +11,7 @@ import (
 )
 
 func main() {
+	log.Fatal("start")
 	err := godotenv.Load(fmt.Sprintf("%s.env", os.Getenv("GO_ENV")))
 	if err != nil {
 		return
