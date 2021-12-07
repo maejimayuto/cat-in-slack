@@ -17,3 +17,6 @@ slack app として、公開
 1. 配信頻度を slack から設定できるようにする
 
 などなど、あまり良いアイデアはない
+
+# License
+The source code is licensed MIT. The website content is licensed CC BY 4.0,see LICENSE.
