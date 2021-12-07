@@ -11,12 +11,12 @@ import (
 )
 
 func main() {
-	log.Fatal("start")
 	err := godotenv.Load(fmt.Sprintf("%s.env", os.Getenv("GO_ENV")))
 	if err != nil {
 		return
 	}
 	cats := cat.GetCats()
+	log.Fatal(cats[0].ToString())
 	fmt.Printf("%s", cats[0].ToString())
 	log.Printf("%s", cats[0].ToString())
 	// TODO: 2MB 以上だと画像が展開されないので、別の画像に変更する #1
